@@ -54,6 +54,8 @@ app.webhooks.on('pull_request.opened', async ({ octokit, payload }) => {
   }
 })
 
+app.webhooks.onAny(console.log)
+
 // Optional: Handle errors
 app.webhooks.onError((error) => {
   if (error.name === 'AggregateError') {
